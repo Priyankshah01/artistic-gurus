@@ -1,0 +1,98 @@
+.projects {
+  padding: 6rem 5vw;
+  background: #f8f8f8;
+}
+
+.projects-header {
+  margin-bottom: 3rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.projects-header h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  position: relative;
+  line-height: 1.1;
+}
+
+.timeline-note {
+  font-size: 1rem;
+  font-style: italic;
+  color: #888;
+  position: absolute;
+  /* right: 20; */
+  top: -1.5rem;
+}
+
+.work-tile {
+  background: #fff;
+  border-radius: 2rem;
+  padding: 3rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  margin-bottom: 4rem;
+}
+
+.work-tile:hover {
+  transform: translateY(-6px);
+}
+
+.tile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tile-tag {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+}
+
+.tile-arrow {
+  font-size: 1.25rem;
+  color: #999;
+  font-weight: bold;
+}
+
+.tile-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.tile-description {
+  color: #555;
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.tile-image {
+  display: flex;
+  justify-content: center;
+}
+
+/* .tile-img-wrapper {
+  background: #fff;
+  padding: 0.75rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
+  max-width: 600px;
+  transition: transform 0.3s ease;
+  
+} */
+
+.tile-img-wrapper img {
+  width: 100%;
+  border-radius: 1rem;
+  display: block;
+  
+}

@@ -1,0 +1,33 @@
+.hero {
+  background: radial-gradient(circle at top left, #ffe55c, #fff);
+  min-height: 100vh;
+  padding: 10vh 5vw;
+  display: flex;
+  align-items: end;
+}
+
+.hero {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+
+.hero-text {
+  max-width: 1200px;
+}
+
+.hero-greeting {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hero-name {
+  font-size: 10rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  color: #000;
+  text-transform: uppercase;
+  line-height: 1;
+}
