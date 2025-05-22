@@ -1,3 +1,5 @@
+/* === PROJECT CARD STYLING === */
+
 .work-tile {
   background: #fff;
   border-radius: 2rem;
@@ -7,10 +9,13 @@
   overflow: hidden;
   transition: transform 0.3s ease;
   margin-bottom: 4rem;
+  height: 780px;
 }
 
 .work-tile:hover {
   transform: translateY(-6px);
+   background: radial-gradient(circle at bottom, #ffe55c, #fff); 
+
 }
 
 .tile-header {
@@ -47,23 +52,70 @@
   line-height: 1.6;
 }
 
+/* === IMAGE SECTION === */
+
 .tile-image {
   display: flex;
-  justify-content: center;
-  max-height: 400px;
+  justify-content: flex-start;  /* Left aligned */
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
-/* .tile-img-wrapper {
+.double-image {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.tile-img-wrapper {
   background: #fff;
-  padding: 0.75rem;
+  width: 400px;         /* Consistent width */
+  height: 600px;        /* Consistent height */
   border-radius: 1.25rem;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
-  max-width: 600px;
-  transition: transform 0.3s ease;
-} */
+  transition: transform 0.5s ease;
+  transform-origin: center;
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  overflow: hidden;
+  
+}
 
 .tile-img-wrapper img {
-  width: 100%;
-  border-radius: 1rem;
-  display: block;
+  /* max-width: 100%; */
+  /* max-height: 100%; */
+  object-fit: fill;
+  border-radius: 0.75rem;
+  
+}
+
+.right{
+
+  width: 30%;
+
+}
+
+.left{
+  width: 65%;
+}
+
+/* === TILT EFFECTS === */
+
+.tilt-left {
+  transform: rotate(2deg);
+}
+
+.tilt-right {
+  transform: rotate(-2deg);
+}
+
+.work-tile:hover .tilt-left,
+.work-tile:hover .tilt-right {
+  transform: rotate(0deg);
+
+
 }
