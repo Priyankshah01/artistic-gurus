@@ -1,13 +1,25 @@
-// ProjectCard.jsx
 import React from "react";
 import "./ProjectCard.css";
+import { useNavigate } from "react-router-dom";
 
 function ProjectCard({ tag, title, description, image1, image2, link }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(link);
+  };
+
   return (
-    <div className="work-tile" data-aos="fade-up" data-aos-duration="800">
+    <div
+      className="work-tile"
+      data-aos="fade-up"
+      data-aos-duration="800"
+      onClick={handleClick}
+      style={{ cursor: "pointer" }}
+    >
       <div className="tile-header">
         <span className="tile-tag">{tag}</span>
-        <a href={link} className="tile-arrow">→</a>
+        <span className="tile-arrow">→</span>
       </div>
 
       <h3 className="tile-title">{title}</h3>

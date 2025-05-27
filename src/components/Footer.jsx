@@ -8,7 +8,7 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-left">
           <FaEnvelope className="icon" />
-          <a href="mailto:priyank@example.com">priyank@example.com</a>
+          <a href="mailto:priyankshah0101@gmail.com">priyankshah0101@gmail.com</a>
         </div>
 
         <div className="footer-right">

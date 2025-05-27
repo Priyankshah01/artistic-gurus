@@ -1,0 +1,68 @@
+.project-detail-page {
+  padding: 6rem 5vw;
+  max-width: 1100px;
+  margin: 0 auto;
+  color: #222;
+  line-height: 1.7;
+}
+
+.project-header h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.project-header .subtitle {
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 1.2rem;
+}
+
+.project-header .summary {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  max-width: 750px;
+}
+
+.project-image-full img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  margin-bottom: 3rem;
+}
+
+.project-section {
+  margin-bottom: 3rem;
+}
+
+.project-section h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.project-section p,
+.project-section ul {
+  font-size: 1.125rem;
+  color: #444;
+}
+
+.project-section ul {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.tool-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tool-badges span {
+  background: #f3f3f3;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+

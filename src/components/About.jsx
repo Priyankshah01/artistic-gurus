@@ -1,8 +1,9 @@
 import React from "react";
 import "./About.css";
 import image1 from "../images/giftelle-ui.jpg";
-import image2 from "../images/giftelle-ui.jpg";
+import image2 from "../images/schoolsys-ui.jpg";
 import image3 from "../images/giftelle-ui.jpg";
+import GIF1 from "../images/Animation1.gif";
 import logos from "./logos";
 function About() {
     return (
@@ -22,14 +23,29 @@ function About() {
 
                 <div className="slideshow-container">
                     <div className="slideshow-track">
+                        <img src={GIF1} alt="GIF 1" className="gif-small" />
                         <img src={image1} alt="Project 1" />
-                        <img src={image2} alt="Project 2" />
-                        <img src={image3} alt="Project 3" />
+                        <img src={GIF1} alt="GIF 1" className="gif-small" />
 
-                        
+                        <img src={GIF1} alt="GIF 2" className="gif-small"/>
+                        <img src={image2} alt="Project 2" />
+                        <img src={GIF1} alt="GIF 2" className="gif-small"/>
+
+                        <img src={GIF1} alt="GIF 3" className="gif-small"/>
+                        <img src={image3} alt="Project 3" />
+                        <img src={GIF1} alt="GIF 3" className="gif-small"/>
+
+                        <img src={GIF1} alt="GIF 1 repeat" className="gif-small"/>
                         <img src={image1} alt="Project 1 repeat" />
+                        <img src={GIF1} alt="GIF 1 repeat" className="gif-small" />
+
+                        <img src={GIF1} alt="GIF 2 repeat" className="gif-small"/>
                         <img src={image2} alt="Project 2 repeat" />
+                        <img src={GIF1} alt="GIF 2 repeat" className="gif-small"/>
+
+                        <img src={GIF1} alt="GIF 3 repeat" className="gif-small"/>
                         <img src={image3} alt="Project 3 repeat" />
+                        <img src={GIF1} alt="GIF 3 repeat" className="gif-small"/>
                     </div>
                 </div>
 
