@@ -43,10 +43,41 @@ function ProjectDetail() {
                     <li>Developed interactive components using React, CSS Grid, and Firebase backend.</li>
                 </ul>
             </section>
+            <section className="project-section">
+                <h2>🖼️ Design Showcase</h2>
 
-            <section className="project-image-full">
-                <img src={giftelleImg} alt="Giftelle full UI preview" />
+                {/* Section 1: 40% / 60% */}
+                <div className="mockup-pair">
+                    <div className="w40">
+                        <img src={giftelleImg} alt="Wireframe 1" />
+                    </div>
+                    <div className="w60">
+                        <img src={giftelleImg} alt="Wireframe 2" />
+                    </div>
+                </div>
+
+                {/* Section 2: 60% / 40% */}
+                <div className="mockup-pair">
+                    <div className="w60">
+                        <img src={giftelleImg} alt="UI Mockup 1" />
+                    </div>
+                    <div className="w40">
+                        <img src={giftelleImg} alt="UI Mockup 2" />
+                    </div>
+                </div>
+
+                {/* Section 3: 50% / 50% */}
+                <div className="mockup-pair">
+                    <div className="w50">
+                        <img src={giftelleImg} alt="Dashboard View 1" />
+                    </div>
+                    <div className="w50">
+                        <img src={giftelleImg} alt="Dashboard View 2" />
+                    </div>
+                </div>
             </section>
+
+
 
             <section className="project-section">
                 <h2>🛠️ Tools & Tech</h2>
