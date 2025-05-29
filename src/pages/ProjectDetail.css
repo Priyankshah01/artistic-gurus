@@ -68,8 +68,8 @@
 
 .mockup-pair {
   display: flex;
-  gap: 2rem;
-  margin: 3rem 0;
+  gap: 1rem;
+  margin: 1rem 0;
   
 }
 
@@ -91,7 +91,7 @@
 
 .mockup-pair img {
   width: 100%;
-  height: 400px;
+  height: 600px;
   border-radius: 1rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   object-fit:cover;

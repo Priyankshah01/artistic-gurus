@@ -22,12 +22,25 @@ function ProjectDetail() {
                 </p>
             </header>
 
+            
+            <section className="project-section">
+                <h2>Tools & Tech</h2>
+                <div className="tool-badges">
+                    <span>Figma</span>
+                    <span>React</span>
+                    <span>CSS</span>
+                    <span>Firebase</span>
+                    <span>VS Code</span>
+                    <span>GitHub</span>
+                </div>
+            </section>
+
             <section className="project-image-full">
                 <img src={giftelleImg} alt="Giftelle full UI preview" />
             </section>
 
             <section className="project-section">
-                <h2>🔍 The Challenge</h2>
+                <h2>The Challenge</h2>
                 <p>
                     Most gifting platforms are cluttered, impersonal, and hard to navigate — users get overwhelmed with too many options.
                     Giftelle needed to deliver a curated, delightful, and efficient gifting experience while supporting small business vendors.
@@ -35,7 +48,7 @@ function ProjectDetail() {
             </section>
 
             <section className="project-section">
-                <h2>💡 My Approach</h2>
+                <h2>My Approach</h2>
                 <ul>
                     <li>Conducted user interviews to identify pain points in gift discovery and checkout.</li>
                     <li>Sketched and wireframed key user flows: browsing, filtering, product detail, checkout.</li>
@@ -44,7 +57,7 @@ function ProjectDetail() {
                 </ul>
             </section>
             <section className="project-section">
-                <h2>🖼️ Design Showcase</h2>
+                <h2>Design Showcase</h2>
 
                 {/* Section 1: 40% / 60% */}
                 <div className="mockup-pair">
@@ -79,20 +92,9 @@ function ProjectDetail() {
 
 
 
-            <section className="project-section">
-                <h2>🛠️ Tools & Tech</h2>
-                <div className="tool-badges">
-                    <span>Figma</span>
-                    <span>React</span>
-                    <span>CSS</span>
-                    <span>Firebase</span>
-                    <span>VS Code</span>
-                    <span>GitHub</span>
-                </div>
-            </section>
 
             <section className="project-section">
-                <h2>📈 Impact</h2>
+                <h2>Impact</h2>
                 <p>
                     Giftelle significantly improved the gift selection process by making it faster, more thoughtful, and intuitive.
                     The UI earned strong feedback during testing for clarity and ease-of-use.

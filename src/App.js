@@ -9,6 +9,7 @@ import Projects from "./components/Projects";
 import About from "./components/About";
 import ConnectSection from "./components/ConnectSection";
 import Footer from "./components/Footer";
+// import Connect from "./components/ConnectModal";
 
 import ProjectDetail from "./pages/ProjectDetail";
 
