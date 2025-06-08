@@ -10,6 +10,8 @@ import About from "./components/About";
 import ConnectSection from "./components/ConnectSection";
 import Footer from "./components/Footer";
 // import Connect from "./components/ConnectModal";
+import ExperienceTimeline from "./components/ExperienceTimeline";
+
 
 import ProjectDetail from "./pages/ProjectDetail";
 
@@ -29,6 +31,7 @@ function AppWrapper() {
               <section id="hey"><Hero /></section>
               <section id="work"><Projects /></section>
               <section id="story"><About /></section>
+              <section id="experience"><ExperienceTimeline /></section>
               <section id="chat"><ConnectSection /></section>
               <Footer />
             </>
