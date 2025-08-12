@@ -14,9 +14,9 @@ const FallingText = ({
   mouseConstraintStiffness = 0.2,
   fontSize = '1rem',
 }) => {
-  const containerRef = useRef(null);
-  const textRef = useRef(null);
-  const canvasContainerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const canvasContainerRef = useRef<HTMLDivElement>(null);
 
   const [effectStarted, setEffectStarted] = useState(false);
 
@@ -85,6 +85,7 @@ const FallingText = ({
       MouseConstraint,
     } = Matter;
 
+    if (!containerRef.current) return;
     const containerRect = containerRef.current.getBoundingClientRect();
     const width = containerRect.width;
     const height = containerRect.height;
@@ -95,7 +96,7 @@ const FallingText = ({
     engine.world.gravity.y = gravity;
 
     const render = Render.create({
-      element: canvasContainerRef.current,
+      element: canvasContainerRef.current ?? undefined,
       engine,
       options: {
         width,
@@ -139,7 +140,7 @@ const FallingText = ({
       boundaryOptions
     );
 
-    const wordSpans = textRef.current.querySelectorAll('span');
+    const wordSpans = textRef.current ? textRef.current.querySelectorAll('span') : [];
     const wordBodies = [...wordSpans].map((elem) => {
       const rect = elem.getBoundingClientRect();
       const x = rect.left - containerRect.left + rect.width / 2;
@@ -222,7 +223,7 @@ const FallingText = ({
       if (render.canvas && canvasContainerRef.current?.contains(render.canvas)) {
         canvasContainerRef.current.removeChild(render.canvas);
       }
-      World.clear(engine.world);
+      World.clear(engine.world, false);
       Engine.clear(engine);
     };
   }, [
