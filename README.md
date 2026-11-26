@@ -1,18 +1,20 @@
-# Artistic Gurus Portfolio
+# Priyank Shah — Portfolio
 
-Welcome to Artistic Gurus! We are a collective of passionate artists dedicated to creating unique and inspiring works across various mediums. Our portfolio showcases a diverse range of projects, including digital illustrations, traditional paintings, sculptures, and mixed media art.
+Next.js 16 (App Router, Turbopack) · Tailwind CSS v4 · Space Grotesk via `next/font` · a small dependency-free scroll runtime (`components/ScrollEffects.tsx`).
 
-## What We Do
+## Edit content
 
-- **Digital Art:** Vibrant illustrations, concept art, and graphic design.
-- **Traditional Art:** Watercolors, acrylics, oils, and sketches.
-- **Sculpture:** Clay, metal, and mixed materials.
-- **Commissions:** Custom artwork tailored to your vision.
+Everything (bio, skills, projects, experience, links) lives in **`lib/data.ts`**.
+Images are in `public/images/`, the resume PDF in `public/`.
 
-## Our Mission
+## Run locally
 
-To inspire creativity and bring artistic visions to life through collaboration and innovation.
+```bash
+npm install
+npm run dev      # http://localhost:3000
+```
 
-## Contact
+## Deploy to Vercel
 
-For inquiries, collaborations, or commissions, please reach out via
+Push this repo to GitHub, then import it at vercel.com/new (framework is auto-detected, no settings needed),
+or run `npx vercel` from this folder. Add your custom domain under Project → Settings → Domains.
