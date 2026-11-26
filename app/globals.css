@@ -2028,6 +2028,17 @@ a {
   outline: 2px solid var(--ink);
   outline-offset: 4px;
 }
+.draft-button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+.form-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
 .draft-ready {
   display: flex;
   flex-wrap: wrap;
