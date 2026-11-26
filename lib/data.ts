@@ -19,6 +19,9 @@ export const profile = {
   },
   email: "priyankshah0101@gmail.com",
   resume: asset("/Priyank_Shah_Resume_2026.pdf"),
+  // Web3Forms access key (web3forms.com). It's meant to be public: it can only
+  // send messages to your inbox. Leave empty to fall back to an email draft.
+  contactFormKey: "c9ff1330-31e0-40c4-98a5-e792e49307b4",
   availability:
     "Open to senior product design roles: full-time, contract or remote. My inbox is open.",
 };
