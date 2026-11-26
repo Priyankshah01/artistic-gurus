@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { asset, siteUrl } from "@/lib/site";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -12,11 +13,11 @@ export const metadata: Metadata = {
   title: "Priyank Shah | Product Designer & Design Engineer",
   description:
     "Priyank Shah designs products and ships them. Five years across commerce at Walmart and healthcare at AlayaCare, from research to production React.",
-  metadataBase: new URL("https://www.shahpriyank.com"),
+  metadataBase: new URL(siteUrl),
   openGraph: {
     title: "Priyank Shah | Product Designer & Design Engineer",
     description: "From research to production React. Based in Toronto.",
-    images: ["/images/Me.jpg"],
+    images: [asset("/images/Me.jpg")],
   },
 };
 

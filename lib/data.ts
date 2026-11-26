@@ -1,6 +1,8 @@
 // Single source of truth for all portfolio content.
 // Edit this file to update text, links, projects and experience.
 
+import { asset } from "./site";
+
 export const profile = {
   name: "Priyank Shah",
   shortName: "Priyank",
@@ -9,14 +11,14 @@ export const profile = {
   role: ["Product Designer", "& Design Engineer."],
   location: "Toronto, Canada",
   year: 2026, // shown as ©2026 in the hero and footer
-  photo: "/images/Me.jpg",
+  photo: asset("/images/Me.jpg"),
   current: {
     company: "Walmart",
     role: "UI/UX Designer & Frontend Developer",
     since: "February 2025",
   },
   email: "priyankshah0101@gmail.com",
-  resume: "/Priyank_Shah_Resume_2026.pdf",
+  resume: asset("/Priyank_Shah_Resume_2026.pdf"),
   availability:
     "Open to senior product design roles: full-time, contract or remote. My inbox is open.",
 };
@@ -25,7 +27,7 @@ export const socials = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/shah-priyank/", icon: "linkedin" },
   { label: "Behance", href: "https://www.behance.net/priyankshah0101", icon: "behance" },
   { label: "Dribbble", href: "https://dribbble.com/Priyank7", icon: "dribbble" },
-  { label: "Resume", href: "/Priyank_Shah_Resume_2026.pdf", icon: "resume" },
+  { label: "Resume", href: asset("/Priyank_Shah_Resume_2026.pdf"), icon: "resume" },
 ] as const;
 
 export type SkillGroup = {
@@ -387,6 +389,6 @@ export const navLinks = {
   secondary: [
     { label: "Skills", href: "#skills" },
     { label: "Experience", href: "#experience" },
-    { label: "Resume", href: "/Priyank_Shah_Resume_2026.pdf" },
+    { label: "Resume", href: asset("/Priyank_Shah_Resume_2026.pdf") },
   ],
 };
