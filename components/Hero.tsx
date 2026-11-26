@@ -1,40 +1,118 @@
-'use client';
+import Image from "next/image";
+import { experience, profile, projects, skills, socials } from "@/lib/data";
+import GlyphBackground from "./GlyphBackground";
+import Typed from "./Typed";
 
-import dynamic from 'next/dynamic';
-import { useState } from 'react';
+const q = (s: string) => JSON.stringify(s);
+const id = profile.shortName.toLowerCase();
 
-const DarkVeil = dynamic(() => import('@/components/DarkVeil'), { ssr: false });
-import Marquee from '@/components/Marquee';
+// The profile, written as code. It becomes the glowing hero background.
+const heroCode = `const ${id} = {
+  name: ${q(profile.name)},
+  role: ${q(profile.role.join(" ").replace(".", ""))},
+  based: ${q(profile.location)},
+  focus: ["Product design", "Design systems", "Production React"],
+  experience: [
+${experience.map((j) => `    { role: ${q(j.role)},\n      company: ${q(j.org)}, dates: ${q(j.dates)} },`).join("\n")}
+  ],
+  projects: {
+${projects.map((p) => `    ${q(p.title)}: ${q(p.category)},`).join("\n")}
+  },
+  skills: {
+${skills.map((g) => `    ${q(g.title)}: [${g.items.map((i) => q(i.name)).join(", ")}],`).join("\n")}
+  },
+  email: ${q(profile.email)},
+${socials
+  .filter((s) => s.icon !== "resume")
+  .map((s) => `  ${s.icon}: ${q(s.href)},`)
+  .join("\n")}
+};
 
+export default function Portfolio() {
+  return <main>
+    <header><h1>{${id}.name}</h1><p>{${id}.role}</p></header>
+    <section><h2>Selected work</h2>
+      {Object.entries(${id}.projects).map(([name, detail]) =>
+        <article key={name}><h3>{name}</h3><p>{detail}</p></article>)}
+    </section>
+    <section><h2>How I work</h2>
+      <ol><li>Design: start with the problem, prove it with users</li>
+        <li>Code: design systems in Figma and in React</li>
+        <li>Bridge: what ships is what was designed</li></ol>
+    </section>
+    <section><h2>Experience</h2>
+      {${id}.experience.map(job => <article key={job.role}>
+        <h3>{job.role}</h3><p>{job.company}</p>
+        <small>{job.dates}</small>
+      </article>)}
+    </section>
+    <section><h2>Toolkit</h2>
+      {Object.entries(${id}.skills).map(([group, tools]) =>
+        <div key={group}><h3>{group}</h3><p>{tools.join(", ")}</p></div>)}
+    </section>
+    <footer><a href={"mailto:" + ${id}.email}>Let's talk.</a></footer>
+  </main>;
+}`;
 
+function Letters({ text, from, offset = 0 }: { text: string; from: "below" | "above"; offset?: number }) {
+  return (
+    <>
+      {[...text].map((c, i) => (
+        <span key={i} className="hero-letter-window">
+          <span className={`hero-letter from-${from}`} style={{ "--i": i + offset } as React.CSSProperties}>
+            {c}
+          </span>
+        </span>
+      ))}
+    </>
+  );
+}
 
 export default function Hero() {
-    const [isPaused, setIsPaused] = useState(false);
+  const [l1, l2] = profile.heroTitle;
+  return (
+    <div id="top" className="hero wrap">
+      <GlyphBackground code={heroCode} />
 
-    return (
-        <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden text-white ">
-            {/* Dark Veil Animated Background */}
-            <div className="absolute inset-0 -z-10">
-                <DarkVeil />
-            </div>
+      <a href="#about" className="hero-portrait" aria-label="About me">
+        <Image src={profile.photo} alt={profile.name} fill priority sizes="320px" />
+      </a>
 
-            {/* Hero Content */}
-            <div className="relative z-10 text-center px-6 max-w-6xl mx-auto mt-12">
-                {/* Tagline */}
-                <p className="mb-6 inline-block rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-medium tracking-wide uppercase backdrop-blur-sm text-white/80">
-                    💻 Full-Story Creator ✏️
-                </p>
+      <div className="hero-heading">
+        <h1 className="hero-title" aria-label={`${l1} ${l2}`}>
+          <span className="title-line" aria-hidden>
+            <span className="hero-word">
+              <span className="hero-code-mark hero-code-open">
+                <svg viewBox="20 0 110 160" fill="none" stroke="currentColor" strokeWidth="16" strokeLinecap="square">
+                  <path opacity=".16" d="M105 30 48 80 105 130" transform="translate(5 6)" />
+                  <path d="M105 30 48 80 105 130" />
+                </svg>
+              </span>
+              <Letters text={l1} from="below" />
+            </span>
+          </span>
+          <span className="title-line" aria-hidden>
+            <span className="hero-word">
+              <Letters text={l2} from="above" offset={l1.length} />
+              <span className="hero-code-mark hero-code-close">
+                <svg viewBox="0 0 180 160" fill="none" stroke="currentColor" strokeWidth="16" strokeLinecap="square">
+                  <path opacity=".16" d="M65 30 25 130M100 30 157 80 100 130" transform="translate(5 6)" />
+                  <path d="M65 30 25 130M100 30 157 80 100 130" />
+                </svg>
+              </span>
+            </span>
+          </span>
+        </h1>
+      </div>
 
-                {/* Heading */}
-                <h1 className="mb-6 text-2xl font-medium leading-tight sm:text-4xl md:text-5xl">
-
-                    Where Pixels Meet Purpose <br className="hidden sm:inline" />
-                    <span className='bg-gradient-to-t from-purple to-purple-500 bg-clip-text text-transparent'>Toronto's User-First Design Developer.</span>
-                </h1>
-            </div>
-            <div className="absolute bottom-0">
-                <Marquee />
-            </div>
-        </section>
-    );
+      <div className="hero-footer">
+        <span className="hero-year">©{profile.year}</span>
+        <span className="hero-focus">
+          {"{{ "}
+          <Typed text={profile.heroTag} />
+          {" }}"}
+        </span>
+      </div>
+    </div>
+  );
 }
